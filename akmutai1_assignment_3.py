@@ -4,7 +4,7 @@ study_hours = 4
 social_points = 76
 stress_level = 50
 
-print(f"Welcome {student_name}")
+print(f"Welcome! {student_name}")
 print("Here are your stats:")
 print(f"GPA: {current_gpa}")
 print(f"Study Hours: {study_hours}")
