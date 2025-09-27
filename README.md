@@ -25,3 +25,5 @@ Different choices lead to different endings.
    cd comp163-assignment-4
    python3 akmutai1_assignment_4.py
 
+## AI Usage
+- Setting up acess token to push commits
