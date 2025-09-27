@@ -71,5 +71,30 @@ if study_choice in study_options:
     else:
         print("You study hard, but results are average.")
 
-else study_choice not in study_options:
+elif study_choice not in study_options:
     print("Invalid choice. Please select a valid study option.")
+
+print("Final Decision: Do you want to focus on Academics or Social Life?")
+final_choice = input("Type 'Academics' or 'Social': ")
+
+if type(final_choice) is str:
+    if final_choice == "Academics":
+        if current_gpa >= 3.5:
+            if stress_level <= 50:
+                print("You graduate with honors and a balanced life")
+            else:
+                print("You graduate with honors, but the stress takes a toll.")
+        else:
+            print("You graduate successfully, but without honors.")
+    elif final_choice == "Social":
+        if social_points >= 60:
+            if current_gpa >= 2.5:
+                print("You make many friends and graduate on time")
+            else:
+                print("You enjoy college life, but academics suffer and graduation is delayed.")
+        else:
+            print("You struggle socially and academically, but push through to graduate.")
+    else:
+        print("Invalid final choice.")
+elif type(final_choice) is not str:
+    print("Invalid input type for final choice.")
