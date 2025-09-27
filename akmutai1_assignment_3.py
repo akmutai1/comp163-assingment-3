@@ -3,6 +3,8 @@ current_gpa = 3.5
 study_hours = 4
 social_points = 76
 stress_level = 50
+study_options = ["Programming", "Math", "English", "History"]
+
 
 print(f"Welcome! {student_name}")
 print("Here are your stats:")
@@ -18,6 +20,9 @@ print("B) Standard (15 credits)")
 print("C) Heavy (18 credits)")
 
 choice = input("Your choice: ")
+print("Choose a study focus from the following options:")
+print(study_options)
+study_choice = input("Your study choice: ")
 
 if choice == "A":
     study_hours += 5
@@ -46,3 +51,25 @@ elif choice == "C":
 
 else:
     print("Invalid choice. Please select A, B, or C.")
+
+if study_choice in study_options:
+
+    if (study_choice == "Programming" or study_choice == "Math") and current_gpa < 3.5:
+        current_gpa += 0.2
+        social_points -= 10
+        print("You have a rigorous study, your gpa is up but your social life is down.")
+
+    elif (study_choice == "English" or study_choice == "History") and social_points <= 60:
+        current_gpa += 0.1
+        social_points += 5
+        print("Your work-life is more balanced and your gpa is slightly up, and your social life is fine.")
+
+    elif study_choice == "Programming" and current_gpa >= 3.5:
+        current_gpa += 0.3
+        print("Studying programming has made you excel!")
+
+    else:
+        print("You study hard, but results are average.")
+
+else study_choice not in study_options:
+    print("Invalid choice. Please select a valid study option.")
